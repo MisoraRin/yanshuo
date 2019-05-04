@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
             SolidBrush newbrush = new SolidBrush(Color.FromArgb(1, 1, 1));
-            g.DrawString("哈哈哈哈哈哈", myfont, newbrush, new Rectangle(0, 0, 1920,1080), sf);
+            g.DrawString(getShi(), myfont, newbrush, new Rectangle(0, 0, 1920,1080), sf);
 
             bitmap.Save("C:\\Users\\zwt\\Desktop\\h.png", ImageFormat.Png);
         }
@@ -80,6 +80,13 @@ namespace WindowsFormsApp1
             
             
             a.Save("C:\\Users\\zwt\\Desktop\\timg1.jpg");
+        }
+
+        public static string getShi()
+        {
+            string url = "https://api.gushi.ci/all.txt";
+            string res = GetHttpResponse(url, 6000);
+            return res;
         }
         public static string GetHttpResponse(string url, int Timeout)
         {
