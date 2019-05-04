@@ -34,6 +34,12 @@ namespace WindowsFormsApp1
         }
         static int x = 0, y = 0, h = 1368, w = 768;
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string url = "https://api.gushi.ci/all.txt";
+            string res = GetHttpResponse(url, 6000);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Bitmap bitmap = new Bitmap(1920, 1080);
