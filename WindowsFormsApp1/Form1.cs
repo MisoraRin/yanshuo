@@ -18,9 +18,15 @@ using System.Windows.Forms;
 using System.Net;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApp1
 {
+    public class WinAPI
+    {
+        [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
+        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -59,6 +65,7 @@ namespace WindowsFormsApp1
             g.DrawString(getShi(), myfont, newbrush, new Rectangle(0, 0, 1920,1080-150), sf);
 
             bitmap.Save("C:\\Users\\zwt\\Desktop\\h.png", ImageFormat.Png);
+            WinAPI.SystemParametersInfo(20, 1, "C:\\Users\\zwt\\Desktop\\h.png", 0x1 | 0x2);
         }
 
         private void button1_Click(object sender, EventArgs e)
