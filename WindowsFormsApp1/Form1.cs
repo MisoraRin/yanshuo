@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
             SolidBrush newbrush = new SolidBrush(Color.FromArgb(1, 1, 1));
-            g.DrawString(getShi(), myfont, newbrush, new Rectangle(0, 0, 1920,1080), sf);
+            g.DrawString(getShi(), myfont, newbrush, new Rectangle(0, 0, 1920,1080-150), sf);
 
             bitmap.Save("C:\\Users\\zwt\\Desktop\\h.png", ImageFormat.Png);
         }
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
 
-            g.DrawString("哈哈哈哈哈哈", myfont, mybrush, new Rectangle(0, 0, a.Height, a.Width), sf);
+            g.DrawString("哈哈哈哈哈哈", myfont, mybrush, new Rectangle(0, 0, a.Height-100, a.Width), sf);
             
             
             a.Save("C:\\Users\\zwt\\Desktop\\timg1.jpg");
