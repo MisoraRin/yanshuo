@@ -64,6 +64,24 @@ namespace WindowsFormsApp1
             WinAPI.SystemParametersInfo(20, 1, "C:\\Users\\zwt\\Desktop\\h.png", 0x1 | 0x2);
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 注意判断关闭事件reason来源于窗体按钮，否则用菜单退出时无法退出!
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                //取消"关闭窗口"事件
+                e.Cancel = true; // 取消关闭窗体 
+
+                //使关闭时窗口向右下角缩小的效果
+                this.WindowState = FormWindowState.Minimized;
+                this.notifyIcon1.Visible = true;
+                //this.m_cartoonForm.CartoonClose();
+                this.Hide();
+                return;
+            }
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
