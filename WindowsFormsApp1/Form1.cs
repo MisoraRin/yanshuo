@@ -22,11 +22,7 @@ using System.Runtime.InteropServices;
 
 namespace WindowsFormsApp1
 {
-    public class WinAPI
-    {
-        [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
-        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
-    }
+    
     public partial class Form1 : Form
     {
         public Form1()
@@ -112,5 +108,10 @@ namespace WindowsFormsApp1
 
             return retString;
         }
+    }
+    public class WinAPI
+    {
+        [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
+        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
     }
 }
